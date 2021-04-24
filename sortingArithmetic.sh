@@ -1,5 +1,6 @@
 #! /bin/bash
 
+declare -A operation
 
 echo "Enter 1st Input:"
 read a
@@ -10,13 +11,11 @@ read c
 
 #compute
 
-operation1=`expr $a + $b \* $c`
-operation2=`expr $a \* $b + $c`
-operation3=`expr $c + $a / $b`
-operation4=`expr $a % $b + $c`
+operation[0]=`expr $a + $b \* $c`
+operation[1]=`expr $a \* $b + $c`
+operation[2]=`expr $c + $a / $b`
+operation[3]=`expr $a % $b + $c`
 
 echo "Three inputs are :" $a $b $c
-echo "Operation1:" $operation1
-echo "Operation2:" $operation2
-echo "Operation3:" $operation3
-echo "Operation4:" $operation4
+
+echo "Dict:" ${operation[@]}
