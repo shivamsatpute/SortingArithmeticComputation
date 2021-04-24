@@ -19,3 +19,15 @@ operation[3]=`expr $a % $b + $c`
 echo "Three inputs are :" $a $b $c
 
 echo "Dict:" ${operation[@]}
+
+declare -a array
+
+i=0
+
+for index in ${operation[@]}
+do
+	array[$i]=$index
+	((i++))
+done
+
+echo "Array :" ${array[*]}
